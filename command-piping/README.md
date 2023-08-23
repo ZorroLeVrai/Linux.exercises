@@ -6,7 +6,7 @@ Via l'utilisation du caractère `|`, il est possible de passer le résultat d'un
 commandeA | commandeB
 ```
 
-Contrairement à la syntaxe de la redirection classique `>`, l'utilisation des pipes sert pour relier une commande ou son résultat à une autre commande. La redirection, elle, vise àconnecter un fichier à une commande. 
+Contrairement à la syntaxe de la redirection classique `>`, l'utilisation des pipes sert pour relier une commande ou son résultat à une autre commande. La redirection, elle, vise à connecter un fichier à une commande.
 
 Dans la grande majorité des cas, le résultat d'un visionnage d'informations multiples sera pipé en direction de la commande **less** de sorte à offrir un visuel plus aggréable et plus de fonctionnalité qu'un simple affichage:
 
@@ -20,7 +20,7 @@ La commande `tr` demande à l'utilisateur de lui transmettre des information via
 
 ### Chainer les commandes
 
-Via l'utilisation des pipes, il devient donc possible de réaliser des demander complexe à notre terminal, comme par exemple de demander quel est le plus gros fichier se trouvant à un certain emplacement de la structure des fichiers système : 
+Via l'utilisation des pipes, il devient donc possible de réaliser des demander complexe à notre terminal, comme par exemple de demander quel est le plus gros fichier se trouvant à un certain emplacement de la structure des fichiers système :
 
 ```bash
 ls -lh /usr/bin | sort -hk5 | tail -1 > largest_file.txt
@@ -30,7 +30,7 @@ du -h /usr/bin | sort -h | tail -1 > largest_file.txt
 
 ### tee
 
-Imaginons maintenant que l'on veuille passer la sortie d'une commande intermédiaire dans un fichier mais également se servir de ce résultat dans une commande chainée. La syntaxe à utiliser sera différente et demandera l'utilisation de la commande `tee`. qui sert à convertir une entrée standard en un fichier tout en la laissant disponible en tant que sortie standard: 
+Imaginons maintenant que l'on veuille passer la sortie d'une commande intermédiaire dans un fichier mais également se servir de ce résultat dans une commande chainée. La syntaxe à utiliser sera différente et demandera l'utilisation de la commande `tee`. qui sert à convertir une entrée standard en un fichier tout en la laissant disponible en tant que sortie standard:
 
 ```python
 commandA | tee filename.txt | commandB
