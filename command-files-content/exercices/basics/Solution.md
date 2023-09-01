@@ -57,10 +57,15 @@ head -n 8 poem.txt
 
 - Exécutez une commande pour afficher les lignes dans `purchases.txt` dans l'ordre inverse (la dernière ligne imprimée en premier).
 
+tac purchases.txt
+
+Pour bien voir l'inversement des lignes on peut utiliser la commande  
 cat -n purchases.txt | tac
 
 - Exécutez une commande pour afficher les lignes dans `purchases.txt`, triées par ordre alphabétique.
 
+sort purchases.txt  
+ou  
 cat purchases.txt | sort
 
 - Exécutez une commande pour compter le nombre de lignes dans `purchases.txt`.
