@@ -10,7 +10,8 @@ PokemonExercise/
 	PokeDex/
 		100Voltorb
 		101Electrode
-	  619Mienfoo
+		...
+		619Mienfoo
 		...
 ```
 

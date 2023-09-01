@@ -47,11 +47,11 @@ wc -w poem.txt
 
 - Exécutez une commande pour afficher les 4 premières lignes de `poem.txt`.
 
-tail -n 4 poem.txt
+head -n 4 poem.txt
 
 - Exécutez une commande pour afficher les 8 dernières lignes de `poem.txt`.
 
-head -n 8 poem.txt
+tail -n 8 poem.txt
 
 ### Partie 2
 
