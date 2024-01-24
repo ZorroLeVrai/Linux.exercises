@@ -8,21 +8,22 @@ Par exemple, l'utilisation du caractère `*` peut être utile dans le cas où l'
 ls *.html
 ```
 
-Ou alors cibler tous les fichiers dont le nom commence par **test**, ou qui commencent par **log_** et portent l'extension **.txt**:
+Ou alors cibler tous les fichiers dont le nom commence par **test**, ou qui commencent par **log\_** et portent l'extension **.txt**:
 
 ```bash
 ls test*
 
-echo log_*.txt
+ls log_*.txt
 ```
 
 Si l'on désire être plus précis, il est possible de cibler des mots dont X caractères peuvent être de n'importe quelle valeur. Pour ce faire, il faut utiliser le wildcard `?`. Par exemple, pour obtenir le nom des fichiers de toutes les pistes MP3 inférieures à la piste 100, on pourrait procéder de la sorte:
 
 ```bash
-echo trach_0??.mp3
+echo track_0??.mp3
 ```
 
-De même, des pattern empruntés aux expressions régulières sont disponibles: 
+De même, des pattern empruntés aux expressions régulières sont disponibles:
+
 - Pour sélectionner des valeurs fixes, on peut utiliser ce genre de syntaxe: `picture[123].png`
 - Pour sélectionner des valeurs allant de X à Y, on peut utiliser ce genre de syntaxe: `picture[1-9].png`, `grading[A-F].txt`
 - L'ajout du caractère `^` en début d'utilisation de ces patterns provoquera une sélection par exclusion du pattern: Pour obtenir toutes les images ne finissant pas par une lettre allant de W à Z, on aurait par exemple: `picture[^W-Z].png`
@@ -39,7 +40,7 @@ Via l'utilisation des caractères `{` et `}`, il est possible de créer des mult
 touch test{A,B,C}.txt
 ```
 
-Il est même possible de créer des patterns plus complexes comme par exemple avec l'utilisation des portées `{debut...fin...pas}`: 
+Il est même possible de créer des patterns plus complexes comme par exemple avec l'utilisation des portées `{debut...fin...pas}`:
 
 ```bash
 ls My_{secret,public}_music{00..20}.{mp3,wav,ogg}
@@ -63,7 +64,7 @@ echo $((expression))
 echo $((1 + 2 * 6)).txt # 13.txt
 ```
 
-### Ssimples vs Doubles guillemets
+### Simples vs Doubles guillemets
 
 Lorsque l'on veut utiliser le terminal et prendre en compte des espaces, il est préférable de se servir de guillemets. Cependant, les simples et les doubles guillemets n'ont pas les mêmes capacités. En effet, lorsque l'on veut pouvoir tout de même placer des valeurs, par exemple des variables (auquelles on peut accéder via le caractère `$`) ou des résultats de commandes, il nous faut utiliser les doubles guillemets. A contrario, si l'on souhaite pouvoir écrire des signes de dollars, alors on doit utiliser les simples guillemets.
 

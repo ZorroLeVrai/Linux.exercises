@@ -1,6 +1,7 @@
 # L'Environnement et sa manipulation
 
 Durant l'exécution du shell, ce dernier nous permet d'utiliser ce que l'on appelle un environnement. Cet environnement prend en compte un certain nombre de variables qui sont stockées sous la forme d'un ensemble clé-valeur. Par exemple, dans notre environnement, on pourrait trouver ce genre de variables:
+
 - Notre dossier personnel
 - Le dossier dans lequel nous sommes en train de travailler
 - Le nom de notre shell
@@ -27,6 +28,7 @@ export nom_variable=valeurvariable
 ### les fichiers de startup
 
 Via l'édition des fichiers de startup, il est possible de modifier le fonctionnement et/ou les préférences utilisateurs de notre terminal. Par exemple, pour changer les couleurs de notre terminal, il faut changer les valeurs de variables d'environnement de nos shells. Ces variables se retrouvent injectées dans le shell par lecture automatique des fichiers:
+
 - `etc/bash.bashrc` pour définir les valeurs de tous les utilisateurs et `~/.bashrc` pour définir celles de l'utilisateur actuel dans le cadre d'une utilisation du shell sans logging. Ce type de session est généralement démarré lorsque l'on lance le terminal via l'interface graphique.
 - `/etc/profile` pour tous les utilisateurs, `~/.bash_profile` pour le fichier de config' personnel de l'utilisateur, `~/.bash_login` qui sera lu si le fichier précédent est manquant, `~/.profile` qui sera lu si les deux précédents n'existent pas.
 
@@ -40,4 +42,4 @@ alias nom_alias='command arguments'
 
 ---
 
-[Rtour](../README.md)
+[Retour](../README.md)

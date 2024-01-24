@@ -1,6 +1,6 @@
 # Trouver des choses avec Find
 
-La première façon de trouver des choses sur notre machine est via l'utilisation de la commande `locate` qui doit généralement être installée pour être accessible. Se servant d'une base de données relativement à jour en permanence et référençant nos fichiers, cette commande fonctionne du coup très rapidement. A contrario, cette base de données n'étant pas complètement à jour, il se peut qu'il lui manque des informations. Son utilisation est assez simple, il suffit de passer en argument ce que l'on cherche: 
+La première façon de trouver des choses sur notre machine est via l'utilisation de la commande `locate` qui doit généralement être installée pour être accessible. Se servant d'une base de données relativement à jour en permanence et référençant nos fichiers, cette commande fonctionne du coup très rapidement. A contrario, cette base de données n'étant pas complètement à jour, il se peut qu'il lui manque des informations. Son utilisation est assez simple, il suffit de passer en argument ce que l'on cherche:
 
 ```bash
 locate nom_fichier
@@ -10,17 +10,17 @@ Cette commande est sensible à la casse, mais va placer un wildcard autour du d�
 
 ### find
 
-A côté de la commande **locate** se trouve la commande `find`. Cette commande est bien plus puissante que son homologue mais demande une connaissance plus étendue de son fonctionnement pour être utilisée à son plein potentiel. De base, elle va afficher tous les fichiers et dossiers se trouvant actuellement dans le dossier courant. Si on lui indique un emplacement, elle va réaliser le même processus à cet emplacement: 
+A côté de la commande **locate** se trouve la commande `find`. Cette commande est bien plus puissante que son homologue mais demande une connaissance plus étendue de son fonctionnement pour être utilisée à son plein potentiel. De base, elle va afficher tous les fichiers et dossiers se trouvant actuellement dans le dossier courant. Si on lui indique un emplacement, elle va réaliser le même processus à cet emplacement:
 
 ```bash
-find 
+find
 
 find my_folder/
 ```
 
 Pour réaliser une recherche par nom, il est nécessaire de passer entre guillemets ce que l'on cherche après avoir ajouté l'option `-name` à notre commande. Si l'on préfère une approche non sensible à la casse, l'option `-iname` est également disponible. Pour n'obtenir que les fichiers, il est possible de spécifier le type recherché via l'option `-type f`
 
-Dans le cas où l'on souhaiterait trouver un fichier dont la taille est spécifique, il est possible de le faire via l'utilisation de l'option `-size` suivi d'une valeur. Plusieurs possibilités s'offrent alors à nous: 
+Dans le cas où l'on souhaiterait trouver un fichier dont la taille est spécifique, il est possible de le faire via l'utilisation de l'option `-size` suivi d'une valeur. Plusieurs possibilités s'offrent alors à nous:
 
 ```bash
 find -size 20k # Taille égale à 20Ko
@@ -34,15 +34,34 @@ On peut également faire une recherche par possesseur du ou des fichiers. Pour c
 
 ### Timestamps
 
-Si l'on veut, il est possible de voir trois méta-données de type **timestamps** pour les fichiers. Pour ce faire, trois commandes sont à notre disposition **mtime**, **ctime** et **atime**. 
+Si l'on veut, il est possible de voir trois méta-données de type **timestamps** pour les fichiers. Pour ce faire, trois commandes sont à notre disposition **mtime**, **ctime** et **atime**.
+
 - `mtime`: Sert à voir la date et l'heure de la dernière modification du fichier (`ls -l`)
 - `ctime`: Sert à voir la date et l'heure du dernier changement concernant un fichier. Cela prend en compte la modification de son contenu mais aussi si l'on change son nom, qu'on le déplace, etc... (`ls -lc`)
-- `atime`: Sert à voir la date et l'heure du dernier accès du fichier, comme par exemple si le fichier est envoyé à la commande **cat** (`ls -lu`). 
+- `atime`: Sert à voir la date et l'heure du dernier accès du fichier, comme par exemple si le fichier est envoyé à la commande **cat** (`ls -lu`).
 
-Pour se servir de la commande **find** en compagnie des timestamps, il va falloir nous servir d'options supplémentaires. Ces options sont très nombreuses, mais sont facilement regroupables par objectif: 
+**Exemples**  
+Pour rechercher les fichiers modifiés ces 7 derniers jours  
+`find /path/to/search -mtime -7`
+
+Pour rechercher les fichiers créés ces 3 derniers jours  
+`find /path/to/search -ctime -3`
+
+Pour rechercher les fichiers accédés ces 30 derniers jours  
+`find /path/to/search -atime -30`
+
+Vous pouvez également utiliser plusieurs requêtes. Par exemple pour rechercher des fichiers qui ont été modifiés il y a exactement 10 jours  
+`find /path/to/search -mtime +10 -mtime -11`
+
+Pour se servir de la commande **find** en compagnie des timestamps, il va falloir nous servir d'options supplémentaires. Ces options sont très nombreuses, mais sont facilement regroupables par objectif:
+
 - `amin`, `cmin`, `mmin`: Pour pouvoir spécifier un temps supérieur, inférieur ou égal à X minutes (accessed, changed, used)
 - `anewer`, `cnewer`, `mnewer`: Se base sur un système de lien de réference (accessed, changed, used)
 - `atime`, `ctime`, `mtime`: Pour pouvoir spécifier un temps supérieur, inférieur ou égal à X jours (accessed, changed, used)
+
+**Exemple**  
+Rechercher les fichiers créés plus récemment qu'un fichier de référence à l'aide de l'option `-cnewer`  
+`find /path/to/search -cnewer /path/to/reference/file.txt`
 
 ### Les opérateurs logiques
 

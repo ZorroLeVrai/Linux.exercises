@@ -38,7 +38,7 @@ Dans le cas où notre objectif est le déplacement de fichiers / dossier, il con
 mv chemin/sourceA chemin/sourcB chemin/sourceC chemin/destination
 ```
 
-Quand il s'agit de déplacer des dossiers, la syntaxe et les règles d'utilisation de la commande sont les mêmes. Il est possible dedéplacer ainsi plusieurs dossiers dans un seul et même dossier. Attention cependant, le dossier doit exister au préalable sous peine de causer une erreur lors de l'exécution de la commande:
+Quand il s'agit de déplacer des dossiers, la syntaxe et les règles d'utilisation de la commande sont les mêmes. Il est possible de déplacer ainsi plusieurs dossiers dans un seul et même dossier. Attention cependant, le dossier doit exister au préalable sous peine de causer une erreur lors de l'exécution de la commande:
 
 ```bash
 mv chemin/dossierA/ chemin/dossierB/ chemin/dossierC/ chemin/destination/

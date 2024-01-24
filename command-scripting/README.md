@@ -1,4 +1,4 @@
-# Créer nos propres scripts
+# Créer vos propres scripts
 
 Pour créer des scripts bash, il est nécéssaire de connaitre un minimum les lignes de commandes, d'écrire un fichier compatible, puis de gérer ses droits afin que le shell puisse le trouver et l'exécuter. Pour créer un script, il faut que la première ligne de ce fichier soit `#! /bin/bash` (Cette ligne de code sert à définir quel sera le chemin du programme devant exécuter le script de sorte à ne plus avoir à préfixer son nom du lien vers le programme lors de son appel dans le terminal):
 

@@ -20,13 +20,17 @@ La commande `tr` demande à l'utilisateur de lui transmettre des information via
 
 ### Chainer les commandes
 
-Via l'utilisation des pipes, il devient donc possible de réaliser des demander complexe à notre terminal, comme par exemple de demander quel est le plus gros fichier se trouvant à un certain emplacement de la structure des fichiers système :
+Via l'utilisation des pipes, il devient donc possible de réaliser des demandes complexes à notre terminal, comme par exemple de demander quel est le plus gros fichier se trouvant à un certain emplacement de la structure des fichiers système :
 
 ```bash
 ls -lh /usr/bin | sort -hk5 | tail -1 > largest_file.txt
 
-du -h /usr/bin | sort -h | tail -1 > largest_file.txt
+find /usr/bin -type f -exec du -h {} + | sort -h | tail -1 > largest_file.txt
+
+find /usr/bin -type f | xargs du -h | sort -h | tail -1 > largest_file.txt
 ```
+
+Dans la 2ème commande, `+` indique la fin de la commande -exec. Il est utilisé pour transmettre plusieurs noms de fichiers à une seule invocation de la commande spécifiée (du -h dans ce cas)
 
 ### tee
 

@@ -6,10 +6,10 @@ La structure du terminal se trouve être de base un prompt permettant d'appréci
 
 ```bash
 # Si l'on est logué en tant qu'utilisateur simple
-utilisateur@hote:~$ 
+utilisateur@hote:~$
 
 # Si l'on est logué en tant que root
-root@hote:~# 
+root@hote:~#
 ```
 
 ### clear
@@ -17,12 +17,13 @@ root@hote:~#
 Dans le cas où l'on souhaiterai nettoyer le terminal et retourner à un terminal vide, il est possible de le faire via l'utilisation de la commande suivante:
 
 ```bash
-user@host:~$ clear 
+user@host:~$ clear
 ```
 
 ### date
 
 Si l'on souhaite connaître la date du jour, ainsi que l'heure et d'autres informations similaires, il est possible de le faire via la commande `date`:
+
 ```bash
 user@host:~$ date
 ```
@@ -51,7 +52,7 @@ Les arguments servent à envoyer des paramètres à notre commande. Via ces argu
 echo MonTexte # MonTexte
 ```
 
-Via l'utilisation d'arguments, dans les commandes précédentes, il est par exemple possible d'avoir le calendrier complet d'une année ou d'un mois précis: 
+Via l'utilisation d'arguments, dans les commandes précédentes, il est par exemple possible d'avoir le calendrier complet d'une année ou d'un mois précis:
 
 ```bash
 ncal 2022
@@ -71,12 +72,12 @@ A côté des arguments sont les options. Les options servent à "transformer" le
 ncal -j
 ```
 
-Si l'on veut, on peut cumuler plusieurs options pour notre utilisation des commandes. Pour ce faire, il est possible de les faire se suivre, soit especées, soit avec une syntaxe regroupant derrière un même tiret les différentes options concaténées: 
+Si l'on veut, on peut cumuler plusieurs options pour notre utilisation des commandes. Pour ce faire, il est possible de les faire se suivre, soit espacées, soit avec une syntaxe regroupant derrière un même tiret les différentes options concaténées:
 
 ```bash
 ncal -3 -M
 
-ncal -3M 
+ncal -3M
 ```
 
 Certaines options supportent également une syntaxe plus verbeuse, qui demande un argument en plusieurs lettres. Dans ce genre de cas, l'option sera appellée via une syntaxe usant de deux tirets, de sorte à la diférencier de la syntaxe usant de plusieurs options concaténées:
@@ -96,7 +97,6 @@ ncal -A1 -B2
 ```
 
 Lorsque l'on compte utiliser à la fois les options et les arguments, il est préférable de placer les options en premier et de donner les arguments en dernier dans un soucis de lisibilité.
-
 
 ---
 
