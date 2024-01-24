@@ -24,7 +24,9 @@ Le fichier `country-data.json` contient un grand ensemble de données de pays, a
 Malheureusement, il y a une faute de frappe à la ligne **15399**. Il dit "Hondras", mais il devrait dire "Honduras". Veuillez corriger cela ! Au lieu de faire défiler pendant une décennie, utilisez un raccourci nano pour aller directement à la ligne **15399**.
 **Bonus** : Découvrez comment dire à nano d'ouvrir le fichier exactement à la ligne **15399**.
 
+```bash
 nano +15399 country-data.json
+```
 
 ### Bonus
 
@@ -32,4 +34,6 @@ Le fichier `review.txt` contient un commentaire texte sur la recette Cacio E Pep
 Ouvrez le fichier `recipe.txt` en utilisant `nano` et faites défiler jusqu'au bas.
 À l'aide d'un raccourci nano que nous n'avons pas couvert, insérez le contenu de `review.txt` en bas de `recipe.txt`.
 
+```
 Utilisez le raccourcis Ctrl + R pour insérer le contenu d'un autre fichier.
+```

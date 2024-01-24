@@ -21,7 +21,10 @@ Effectuez les défis suivants en utilisant les fichiers de départ. Assurez-vous
 
 - Comptez le nombre de fichiers Pokemon dans le dossier `PokeDex/`. Vous devrez combiner des commandes pour que cela fonctionne !
 
+```bash
 ls -1 PokeDex | wc -l
+```
+
 Il y a 719 fichiers au total.
 
 - Ensuite, créez un nouveau fichier unique appelé `all-pokemon.txt` dans le dossier `PokemonExercise` (et NON dans le dossier `PokeDex`) qui contient le nom de chaque fichier Pokemon en minuscules dans le répertoire, trié par ordre numérique ! Le résultat final devrait ressembler à ceci :
@@ -42,7 +45,9 @@ Il y a 719 fichiers au total.
 ...
 ```
 
+```bash
 ls -1 PokeDex | tr [A-Z] [a-z] | sort -n > all-pokemon.txt
+```
 
 - Maintenant que nous avons ce fichier qui inclut tous les Pokemon dans l'ordre numérique, imprimons les trois Pokemon liés aux pigeons : pidgey, pidgeotto et pidgeot. En utilisant la ligne de commande, imprimez les lignes 16-18. Ça devrait ressembler à ça :
 
@@ -52,9 +57,11 @@ ls -1 PokeDex | tr [A-Z] [a-z] | sort -n > all-pokemon.txt
 18pidgeot
 ```
 
-cat all-pokemon.txt | head -n 18 | tail -n 3  
+```bash
+cat all-pokemon.txt | head -n 18 | tail -n 3
 ou
 cat all-pokemon.txt | grep "^1[6-8][a-z]"
+```
 
 - Ensuite, isolons les 151 premiers Pokemon. En utilisant un pipeline unique...
   - imprimez les 151 premières lignes du fichier `all-pokemon.txt`
@@ -72,4 +79,6 @@ zapdos
 zubat
 ```
 
+```bash
 cat all-pokemon.txt | head -n 151 | tr -d [0-9] | sort > original-151.txt
+```

@@ -11,7 +11,9 @@ Elle n'a pas besoin de paramètres mais elle peut prendre une option.
 
 - Maintenant, essayez de l'exécuter ! Que se passe-t-il ?
 
+```
 Le nom de l'utilisateur courant s'affiche.
+```
 
 - Il y a une autre commande appelée `who`. Sans utiliser Google, découvrez ce qu'elle fait ! Nécessite-t-elle des arguments ou des options pour s'exécuter ?
 
