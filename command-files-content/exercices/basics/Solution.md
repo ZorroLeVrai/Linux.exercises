@@ -22,7 +22,7 @@ cat -n poem.txt
 `q` pour quitter le programme `less`
 
 ```bash
-less -n poem.txt
+less -N poem.txt
 ```
 
 - Recherchez le terme "Dog" dans less. Pouvez-vous trouver la ligne qui le contient ?
@@ -41,7 +41,7 @@ puis tapez la commande
 /dog
 ```
 
-Pour avancer ou reculer dans la recherche, utilisez les touches `f` et `b`.
+Pour avancer ou reculer dans la recherche, utilisez les touches `n` et `N`.
 
 - Il est maintenant temps de faire des recherches ! Trouvez l'option pour indiquer à less d'ouvrir avec les numéros de ligne affichés. Ouvrez `poem.txt` de cette façon.
 

@@ -18,16 +18,16 @@ cat angela-survey.txt nico-survey.txt juan-survey.txt > all-species.txt
 Vous pouvez vérifier que la commande précédente s'est bien exécutée à l'aide de la commande suivante
 
 ```bash
-ls -1 | xargs wc -w
+ls | xargs wc -w
 ```
 
 - Le problème avec le fichier `all-species.txt` est qu'il contient des entrées en double ! Utilisez une seule commande pour trier les lignes par ordre alphabétique, en ne triant que les éléments uniques, et envoyez la sortie dans un nouveau fichier appelé `sorted-animals.txt`.
 
 ```bash
-less all-species.txt | sort -u > sorted-animals.txt
+cat all-species.txt | sort -u > sorted-animals.txt
 ```
 
-Maintenant, vous allez faire une belle promenade matinale et vous tombez sur une grande anaconda qui se prélassait sur une bûche. Vous devriez ajouter cette observation à la liste des espèces !
+Maintenant, vous allez faire une belle promenade matinale et vous tombez sur un grand anaconda qui se prélassait sur une bûche. Vous devriez ajouter cette observation à la liste des espèces !
 
 - Commencez par ajouter la date actuelle à la fin du fichier `sorted-animals.txt` en utilisant une commande (ne pas ouvrir le fichier manuellement !).
 

@@ -22,6 +22,8 @@ Effectuez les défis suivants en utilisant les fichiers de départ. Assurez-vous
 - Comptez le nombre de fichiers Pokemon dans le dossier `PokeDex/`. Vous devrez combiner des commandes pour que cela fonctionne !
 
 ```bash
+ls PokeDex | wc -w
+ou
 ls -1 PokeDex | wc -l
 ```
 

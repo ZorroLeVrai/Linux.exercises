@@ -65,7 +65,7 @@ cat employees.csv | grep -E 75000$
 - Cherchez toutes les lignes dont le nom de famille est "Smith" et dont le titre est "Sales", les afficher dans le terminal
 
 ```bash
-cat employees.csv | grep -E "([^,]+,){2}Smith,[^,]+,[^,]*Sales[^,]*,*"
+cat employees.csv | grep -E "([^,]+,){2}Smith,[^,]+,Sales"
 ```
 
 - Cherchez toutes les lignes qui contiennent soit le département "IT", soit le département "Marketing"
@@ -83,11 +83,11 @@ cat employees.csv | grep -E "([^,]+,){3}Finance,[^,]*Analyst"
 - Trouvez toutes les lignes dont le salaire est de 50000, 55000 ou 60000
 
 ```bash
-cat employees.csv | grep -E "(50000|55000|60000)"
+cat employees.csv | grep -E "(50000|55000|60000)$"
 ```
 
 - Trouvez toutes les lignes dont le nom de famille est soit "Garcia", soit "Wilson" et dont le salaire est plus grand que 65000
 
 ```bash
-cat employees.csv | grep -E "(Garcia|Wilson)" | awk -F ',' 'NR > 1 && $6 > 65000 { print }'
+cat employees.csv | grep -E "(Garcia|Wilson)" | awk -F ',' '$6 > 65000 { print }'
 ```

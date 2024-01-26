@@ -57,7 +57,7 @@ Il y en a 6
 - Un des poulets est très très vieux, lequel est-ce ? (quel fichier dans le dossier `Chickens` a la date de modification la plus ancienne ?) Utilisez une commande pour le découvrir !
 
 Pour déterminer le fichier le plus vieux, vous pouvez taper la commande suivante
-`ls -alr --sort=time`
+`ls -al --sort=time`
 
 Le fichier Elvis est le plus ancien (la plus ancienne date de modification)
 

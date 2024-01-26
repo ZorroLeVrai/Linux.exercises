@@ -47,10 +47,11 @@ find -type f -size +20k
 - Trouvez le fichier de cas qui a une taille supérieure à 150ko et qui est fermé.
 
 ```bash
-find -iname *_closed.txt -type f -size +150k
+find -iname "*_closed.txt" -type f -size +150k
 ```
 
-- Personne n'a touché à ces fichiers de cas depuis des années, ou du moins personne ne devrait avoir touché à ces fichiers, mais malheureusement, un détective corrompu a récemment altéré l'un des fichiers. Aujourd'hui, il a changé un seul cas de "closed" à "open" pour nuire à l'un de ses ennemis. Trouvez le cas qui a été modifié plus récemment que le fichier `yesterday.txt`. Regardez la vidéo d'introduction de l'exercice si vous êtes confus ! Vous devrez peut-être lire les pages man pour trouver la commande correcte.
+- Personne n'a touché à ces fichiers de cas depuis des années, ou du moins personne ne devrait avoir touché à ces fichiers, mais malheureusement, un détective corrompu a récemment altéré l'un des fichiers. Aujourd'hui, il a changé un seul cas de "closed" à "open" pour nuire à l'un de ses ennemis. Trouvez le cas qui a été modifié plus récemment que le fichier `yesterday.txt`.  
+  Vous devrez peut-être lire les pages man pour trouver la commande correcte.
 
 ```bash
 find -newer yesterday.txt -type f
