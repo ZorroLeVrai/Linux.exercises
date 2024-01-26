@@ -18,6 +18,8 @@ cat angela-survey.txt nico-survey.txt juan-survey.txt > all-species.txt
 Vous pouvez vérifier que la commande précédente s'est bien exécutée à l'aide de la commande suivante
 
 ```bash
+wc -l *
+ou
 ls | xargs wc -w
 ```
 
