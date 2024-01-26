@@ -49,6 +49,8 @@ Il y a 719 fichiers au total.
 
 ```bash
 ls -1 PokeDex | tr [A-Z] [a-z] | sort -n > all-pokemon.txt
+ou
+ls -1 PokeDex | tr [:upper:] [:lower:] | sort -n > all-pokemon.txt
 ```
 
 - Maintenant que nous avons ce fichier qui inclut tous les Pokemon dans l'ordre numérique, imprimons les trois Pokemon liés aux pigeons : pidgey, pidgeotto et pidgeot. En utilisant la ligne de commande, imprimez les lignes 16-18. Ça devrait ressembler à ça :
@@ -83,4 +85,6 @@ zubat
 
 ```bash
 cat all-pokemon.txt | head -n 151 | tr -d [0-9] | sort > original-151.txt
+ou
+cat all-pokemon.txt | head -n 151 | tr -d [:digit:] | sort > original-151.txt
 ```

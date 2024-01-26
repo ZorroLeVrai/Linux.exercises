@@ -41,53 +41,71 @@ Dans le fichier des employés ci-dessus, utilisez la commande `grep` pour obteni
 - Trouvez toutes les lignes comportant le prénom "John"
 
 ```bash
-cat employees.csv | grep -i John
+awk -F, '$2 == "John"' employees.csv
+ou
+grep -i John employees.csv
 ```
 
 - Trouvez toutes les lignes contenant le département "IT"
 
 ```bash
-cat employees.csv | grep IT
+awk -F, '$4 == "IT"' employees.csv
+ou
+grep IT employees.csv
 ```
 
 - Cherchez toutes les lignes contenant le mot "Manager" dans le champs "Title" et les afficher dans le terminal
 
 ```bash
-cat employees.csv | grep -E Manager,[0-9]+
+awk -F, '$5 ~ /Manager$/' employees.csv
+ou
+grep -E Manager,[0-9]+ employees.csv
 ```
 
 - Cherchez toutes les lignes dont le salaire est de "75000" et afficher le résultat dans le terminal
 
 ```bash
-cat employees.csv | grep -E 75000$
+awk -F, '$6 == 75000' employees.csv
+ou
+grep 75000$ employees.csv
 ```
 
 - Cherchez toutes les lignes dont le nom de famille est "Smith" et dont le titre est "Sales", les afficher dans le terminal
 
 ```bash
-cat employees.csv | grep -E "([^,]+,){2}Smith,[^,]+,Sales"
+awk -F, '$3 == "Smith" && $5 ~ /Sales/' employees.csv
+ou
+grep -E "([^,]+,){2}Smith,[^,]+,Sales" employees.csv
 ```
 
 - Cherchez toutes les lignes qui contiennent soit le département "IT", soit le département "Marketing"
 
 ```bash
-cat employees.csv | grep -E "([^,]+,){3}(IT|Marketing)"
+awk -F, '$4 == "IT" || $4 == "Marketing"' employees.csv
+ou
+awk -F, '$4 ~ /(IT|Marketing)/' employees.csv
+ou
+grep -E "([^,]+,){3}(IT|Marketing)" employees.csv
 ```
 
 - Trouvez toutes les lignes possédant le département "Finance" et le titre d'analyste.
 
 ```bash
-cat employees.csv | grep -E "([^,]+,){3}Finance,[^,]*Analyst"
+awk -F, '$4 == "Finance" && $5 ~ /Analyst/' employees.csv
+ou
+grep -E "([^,]+,){3}Finance,[^,]*Analyst" employees.csv
 ```
 
 - Trouvez toutes les lignes dont le salaire est de 50000, 55000 ou 60000
 
 ```bash
-cat employees.csv | grep -E "(50000|55000|60000)$"
+grep -E "(50000|55000|60000)$" employees.csv
+ou
+awk -F, '$6 ~ /(50000|55000|60000)/' employees.csv
 ```
 
 - Trouvez toutes les lignes dont le nom de famille est soit "Garcia", soit "Wilson" et dont le salaire est plus grand que 65000
 
 ```bash
-cat employees.csv | grep -E "(Garcia|Wilson)" | awk -F ',' '$6 > 65000 { print }'
+awk -F, '$3 ~ /^(Garcia|Wilson)$/ && $6 > 65000' employees.csv
 ```
