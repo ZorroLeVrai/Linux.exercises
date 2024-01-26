@@ -26,7 +26,7 @@ ls | xargs wc -w
 - Le problème avec le fichier `all-species.txt` est qu'il contient des entrées en double ! Utilisez une seule commande pour trier les lignes par ordre alphabétique, en ne triant que les éléments uniques, et envoyez la sortie dans un nouveau fichier appelé `sorted-animals.txt`.
 
 ```bash
-cat all-species.txt | sort -u > sorted-animals.txt
+sort -u all-species.txt > sorted-animals.txt
 ```
 
 Maintenant, vous allez faire une belle promenade matinale et vous tombez sur un grand anaconda qui se prélassait sur une bûche. Vous devriez ajouter cette observation à la liste des espèces !
