@@ -7,18 +7,18 @@ Avant de pouvoir supprimer, déplacer ou copier des éléments... nous avons bes
 Veuillez créer un nouveau répertoire quelque part sur votre machine appelé `Bootcamp`. À l'intérieur, créez les dossiers et fichiers indiqués ci-dessous :
 
 ```bash
-**Bootcamp/**
-	**FallCohort/**
+Bootcamp/
+	FallCohort/
 		Italo.txt
 		Edgar.txt
 		Linus.txt
 		Sara.txt
 		Silvio.txt
-		**Waitlist/**
+		Waitlist/
 			Hanna.txt
 			Haris.txt
 			Netta.txt
-	**WinterCohort/**
+	WinterCohort/
 		Santiago.txt
 		Iris.txt
 		Naomi.txt
