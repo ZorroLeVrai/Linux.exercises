@@ -1,6 +1,7 @@
 # Liste d'étudiants
 
 `students.csv`
+
 ```csv
 Lastname,Firstname,Age,Favorite_animal
 Smith,John,20,Dog
@@ -27,8 +28,8 @@ White,Amanda,24,Dog
 
 Via l'utilisation du terminal et du fichier CSV **students.csv**, vous allez devoir récupérer diverses informations au moyen de la commande `grep`.
 
-* Trouvez toutes les lignes contenant le nom de famille "Smith"
-* Touvez tous les élèves agés de 20 ans
-* Trouvez tous les élèves dont l'animal préféré est un chat
-* Trouvez tous les élèves dont l'animal préféré n'est pas un poisson
-* Trouvez toutes les personnes dont le prénom est "Maria" et dont l'animal préféré est un poisson.
+- Trouvez toutes les lignes contenant le nom de famille "Smith"
+- Trouvez tous les élèves agés de 20 ans
+- Trouvez tous les élèves dont l'animal préféré est un chat
+- Trouvez tous les élèves dont l'animal préféré n'est pas un poisson
+- Trouvez toutes les personnes dont le prénom est "Maria" et dont l'animal préféré est un poisson.

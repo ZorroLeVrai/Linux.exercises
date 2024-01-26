@@ -39,6 +39,57 @@ grep "[A-Z]{1,8}" -E  my_text.txt
 
 [Regex CheatSheet](https://www.rexegg.com/regex-quickstart.html)
 
+# La commande AWK
+
+La commande AWK est un outil puissant de traitement de texte en ligne de commande.  
+Elle permet de manipuler, filtrer et formater des données, en particulier dans le contexte des fichiers CSV (Comma-Separated Values).
+
+## Principe de base
+
+AWK fonctionne en parcourant chaque ligne d'un fichier texte, divisant chaque ligne en champs (colonnes) en fonction d'un séparateur (par défaut, l'espace ou la tabulation), et permettant d'appliquer des conditions et des actions spécifiques à ces champs.
+
+## Exemples pratiques
+
+Supposons que nous ayons un fichier CSV nommé donnees.csv avec les colonnes suivantes : Prénom, Age, Salaire, Département.
+
+```
+Prénom,Age,Salaire,Département
+Adam,28,50000,IT
+Lise,35,60000,Sales
+John,32,42000,Support
+Zebra,45,75000,Marketing
+```
+
+**Exemple 1**  
+Afficher tous les employées avec un salaire supérieur à 50000
+
+```bash
+awk -F, 'NR > 1 && $3 > 50000' donnees.csv
+```
+
+NR > 1 est utilisé pour sauter l'entête du fichier CSV.
+
+**Exemple 2**  
+Afficher tous les employées dont le prénom est "John" et l'age supérieur à 30
+
+```bash
+awk -F, '$1 == "John" && $2 > 30' donnees.csv
+```
+
+**Exemple 3**  
+Afficher tous les employées dont l'age est supérieur à 40 ou que le nom du département commence par la lettre `S`
+
+```bash
+awk -F, 'NR > 1 && ($2 > 40 || $4 ~ /^S/)' donnees.csv
+```
+
+**Exemple 4**  
+Afficher le nom et le département des employés n'étant pas du département Marketing
+
+```bash
+awk -F, 'NR > 1 && $4 != "Marketing" { print $1, $4 }' donnees.csv
+```
+
 ---
 
 [Retour](../README.md)

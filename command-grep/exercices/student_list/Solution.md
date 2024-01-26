@@ -31,29 +31,39 @@ Via l'utilisation du terminal et du fichier CSV **students.csv**, vous allez dev
 - Trouvez toutes les lignes contenant le nom de famille "Smith"
 
 ```bash
-cat students.csv | grep "^Smith"
+grep "^Smith" students.csv
+ou
+awk -F, '$1 == "Smith"' students.csv
 ```
 
-- Touvez tous les élèves agés de 20 ans
+- Trouvez tous les élèves agés de 20 ans
 
 ```bash
-cat students.csv | grep ",20,"
+awk -F, '$3 == 20' students.csv
+ou
+grep -E "^([^,]+,){2}20," students.csv
 ```
 
 - Trouvez tous les élèves dont l'animal préféré est un chat
 
 ```bash
-cat students.csv | grep "Cat$"
+grep "Cat$" students.csv
+ou
+awk -F, '$4 == "Cat"' students.csv
 ```
 
 - Trouvez tous les élèves dont l'animal préféré n'est pas un poisson
 
 ```bash
-cat students.csv | grep -v "Fish$"
+grep -v "Fish$" students.csv
+ou
+awk -F, '$4 != "Fish"' students.csv
 ```
 
 - Trouvez toutes les personnes dont le prénom est "Maria" et dont l'animal préféré est un poisson.
 
 ```bash
-cat students.csv | grep "Maria.*Fish$"
+awk -F, '$2 == "Maria" && $4 == "Fish"' students.csv
+ou
+grep -E "^[^,]+,Maria.*Fish$" students.csv
 ```

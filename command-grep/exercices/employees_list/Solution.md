@@ -59,7 +59,7 @@ grep IT employees.csv
 ```bash
 awk -F, '$5 ~ /Manager$/' employees.csv
 ou
-grep -E Manager,[0-9]+ employees.csv
+grep -E Manager,[0-9]+$ employees.csv
 ```
 
 - Cherchez toutes les lignes dont le salaire est de "75000" et afficher le résultat dans le terminal
@@ -75,7 +75,7 @@ grep 75000$ employees.csv
 ```bash
 awk -F, '$3 == "Smith" && $5 ~ /Sales/' employees.csv
 ou
-grep -E "([^,]+,){2}Smith,[^,]+,Sales" employees.csv
+grep -E "^([^,]+,){2}Smith,[^,]+,Sales" employees.csv
 ```
 
 - Cherchez toutes les lignes qui contiennent soit le département "IT", soit le département "Marketing"
@@ -85,7 +85,7 @@ awk -F, '$4 == "IT" || $4 == "Marketing"' employees.csv
 ou
 awk -F, '$4 ~ /(IT|Marketing)/' employees.csv
 ou
-grep -E "([^,]+,){3}(IT|Marketing)" employees.csv
+grep -E "^([^,]+,){3}(IT|Marketing)" employees.csv
 ```
 
 - Trouvez toutes les lignes possédant le département "Finance" et le titre d'analyste.
@@ -93,7 +93,7 @@ grep -E "([^,]+,){3}(IT|Marketing)" employees.csv
 ```bash
 awk -F, '$4 == "Finance" && $5 ~ /Analyst/' employees.csv
 ou
-grep -E "([^,]+,){3}Finance,[^,]*Analyst" employees.csv
+grep -E "^([^,]+,){3}Finance,[^,]*Analyst" employees.csv
 ```
 
 - Trouvez toutes les lignes dont le salaire est de 50000, 55000 ou 60000
