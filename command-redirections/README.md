@@ -2,17 +2,9 @@
 
 Les trois modes de base de canaux de communication entre un programme et son environnement sont:
 
-- Le canal de l'entrée standard
-- Le canal de la sortie standard
-- Le canal d'erreur standard
-
-### La sortie standard
-
-Ce canal est par défaut le terminal, ce qui fait que l'on observe le résultat de la commande dans notre terminal. Il est cependant possible de rediriger la sortie vers un autre ordinateur, un fichier, une imprimante, etc...
-
-Si l'on souhaite modifier la sortie standard de notre commande pour stocker le résultat dans un fichier, il est possible de le faire via le catactère `>`.
-
-Par défault, le contenu du base du fichier sera perdu. Il est possible que cela ne soit pas le shéma de fonctionnement désiré. Dans ce cas, il faut utiliser `>>`.
+- Le canal de l'entrée standard (stdin (0))
+- Le canal de la sortie standard (stdout (1))
+- Le canal d'erreur standard (stderr (2))
 
 ### L'entrée standard
 
@@ -25,6 +17,14 @@ cat mon_fichier.txt
 
 cat < mon_fichier.txt
 ```
+
+### La sortie standard
+
+Ce canal est par défaut le terminal, ce qui fait que l'on observe le résultat de la commande dans notre terminal. Il est cependant possible de rediriger la sortie vers un autre ordinateur, un fichier, une imprimante, etc...
+
+Si l'on souhaite modifier la sortie standard de notre commande pour stocker le résultat dans un fichier, il est possible de le faire via le catactère `>`.
+
+Par défault, le contenu du base du fichier sera perdu. Il est possible que cela ne soit pas le shéma de fonctionnement désiré. Dans ce cas, il faut utiliser `>>`.
 
 ### L'erreur standard
 
@@ -40,7 +40,7 @@ Il est possible de procéder à la combinaisons des différentes notions vues pr
 sort test.txt > mon_resultat.txt 2> errors.txt
 ```
 
-Si l'on veut, il est possible d'user de `2>&1` ou de `&>` dans le but de rediriger à la fois la sortie standard et l'erreur standard vers le même chemin.
+Si l'on veut, il est possible d'utiliser de `2>&1` ou de `&>` dans le but de rediriger à la fois la sortie standard et l'erreur standard vers le même chemin.
 
 ```bash
 sort test.txt &> result_and_errors.txt

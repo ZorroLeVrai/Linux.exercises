@@ -1,6 +1,6 @@
 # Le Piping
 
-Via l'utilisation du caractère `|`, il est possible de passer le résultat d'une première commande à la suivante. Ce processus, répétable autant de fois qu'on le veut, et combiné avec les redirections, est au coeur des capacités bien plus grandes du terminal par rapport à une interface graphique classique. La syntaxe, dans ses grande ligne, ressemble à ceci:
+Via l'utilisation du caractère `|`, il est possible de passer le résultat d'une première commande à la suivante. Ce processus, répétable autant de fois qu'on le veut, et combiné avec les redirections, est au coeur des capacités bien plus grandes du terminal par rapport à une interface graphique classique. La syntaxe, dans ses grandes lignes, ressemble à ceci:
 
 ```bash
 commandeA | commandeB

@@ -4,7 +4,7 @@
 Une fois que vous avez téléchargé le fichier zip ci-dessus, décompressez-le ! Il contient deux fichiers : `poem.txt` et `purchases.txt`
 
 ### Partie 1
-* Utilisez une commande pour afficher l'intégralité du contenu du fichier `poem.txt`. Utilisez une option pour que la sortie inclue également les numéros de ligne.
+* Utilisez une commande pour afficher l'intégralité du contenu du fichier `poem.txt`. Utilisez une option pour que la sortie inclut également les numéros de ligne.
 * C'est une douleur de tout lire d'un coup ! Lisez poem.txt en utilisant `less` à la place.
   * Faites défiler une ligne à la fois vers le bas
   * Faites défiler une ligne à la fois vers le haut
